@@ -1,0 +1,32 @@
+ 31 lines (31 sloc) 640 Bytes
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <form action="" method="post">
+        <p>
+	    <label for="username">Username</label>
+	    <input type="text" name="username">
+	</p>
+	<p>
+	    <label for="password">Password</label>
+	    <input type="password" name="password">
+	</p>
+	<p>
+	    <input type="submit">
+        </p>
+    </form>
+	{% with messages = get_flashed_messages() %}
+  		{% if messages %}
+    		<ul class=flashes>
+    		{% for message in messages %}
+      			<li>{{ message }}</li>
+    		{% endfor %}
+    		</ul>
+  		{% endif %}
+	{% endwith %}
+</body>
+</html>
